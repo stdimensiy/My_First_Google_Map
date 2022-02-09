@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">My First Google Map</string>
+    <string name="nav_maps_fragment_label">Карта</string>
+    <string name="nav_points_fragment_label">Мои точки</string>
+    <string name="fab_contentDescription">FAB</string>
+    <string name="item_menu_point_list_content_description">Переход к списку избранных точек на карте</string>
+    <string name="item_menu_point_list_title">Мой список точек карты</string>
+    <string name="item_menu_map_content_description">Переход на фрагмент карты</string>
+    <string name="item_menu_map_title">Карта</string>
 </resources>

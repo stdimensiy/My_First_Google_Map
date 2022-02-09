@@ -6,13 +6,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.google.android.material.bottomappbar.BottomAppBar
 import ru.vdv.myfirstgooglemap.R
 
 class PointsFragment : Fragment() {
-
-    companion object {
-        fun newInstance() = PointsFragment()
-    }
+    private lateinit var bottomAppBar: BottomAppBar
 
     private lateinit var viewModel: PointsViewModel
 
@@ -23,10 +21,15 @@ class PointsFragment : Fragment() {
         return inflater.inflate(R.layout.points_fragment, container, false)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProvider(this).get(PointsViewModel::class.java)
-        // TODO: Use the ViewModel
+    }
+
+    override fun onStart() {
+        super.onStart()
+        bottomAppBar = requireActivity().findViewById(R.id.bottomAppBar)
+        bottomAppBar.replaceMenu(R.menu.point_list_fragment_menu)
     }
 
 }

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/nav_maps_fragment">
+
+    <fragment
+        android:id="@+id/nav_maps_fragment"
+        android:name="ru.vdv.myfirstgooglemap.ui.main.MapsFragment"
+        android:label="@string/nav_maps_fragment_label"
+        tools:layout="@layout/fragment_maps" >
+        <action
+            android:id="@+id/action_mapsFragment_to_pointsFragment"
+            app:destination="@id/nav_points_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_points_fragment"
+        android:name="ru.vdv.myfirstgooglemap.ui.points.PointsFragment"
+        android:label="@string/nav_points_fragment_label"
+        tools:layout="@layout/points_fragment" >
+        <action
+            android:id="@+id/action_pointsFragment_to_mapsFragment"
+            app:destination="@id/nav_maps_fragment" />
+    </fragment>
+</navigation>

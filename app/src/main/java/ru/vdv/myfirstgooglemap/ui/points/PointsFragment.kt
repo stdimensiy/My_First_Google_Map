@@ -31,9 +31,11 @@ class PointsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProvider(this).get(PointsViewModel::class.java)
+        viewModel.getAllPoints()
         val listOfPoints = binding.pointList
         listOfPoints.adapter = adapter
-        listOfPoints.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+        listOfPoints.layoutManager =
+            LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         viewModel.preparePointsList.observe(viewLifecycleOwner) {
             adapter.items = it
             adapter.notifyDataSetChanged()
@@ -50,5 +52,4 @@ class PointsFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
-
 }
